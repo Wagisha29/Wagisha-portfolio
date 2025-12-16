@@ -1,15 +1,15 @@
 import { useState } from "react";
 const sections = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" },
-  ];
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
 
 function Navbar() {
-
-    const [active, setActive] = useState("about");
+    const [active, setActive] = useState("home");
     const [isOpen, setIsOpen] = useState(false);
 
     const handleNavClick = (id) => {

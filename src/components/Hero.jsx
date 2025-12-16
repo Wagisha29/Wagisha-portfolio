@@ -3,7 +3,7 @@ import { FiLinkedin, FiMail, FiGithub, FiTwitter } from "react-icons/fi";
 function Hero() {
   return (
     <section
-      id="about"
+      id="home"
       className="bg-slate-950 text-slate-50 border-b border-slate-800"
     >
       <div className="mx-auto max-w-5xl px-4 py-16">
