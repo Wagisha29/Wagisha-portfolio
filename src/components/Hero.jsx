@@ -14,7 +14,7 @@ function Hero() {
               Hey, I&apos;m Wagisha 👋
             </p>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Frontend Developer building fast, clean, and scalable web
+            Full-stack engineer building scalable, user-focused web applications from frontend to backend.
               experiences.
             </h1>
             <p className="mt-4 text-sm text-slate-300 md:text-base max-w-xl">
@@ -23,8 +23,7 @@ function Hero() {
               turning product ideas into polished, production-ready UIs.
             </p>
             <p className="mt-3 text-xs text-slate-400 md:text-sm">
-              Tech stack: React, JavaScript/TypeScript, Tailwind CSS, Vite, REST
-              APIs.
+              Tech stack: React, Next.js, Tailwind CSS, JavaScript, TypeScript, Node.js, Express, REST APIs, MongoDB, Git, GitHub
             </p>
 
             {/* CTAs */}
