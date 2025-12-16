@@ -83,17 +83,60 @@ function Hero() {
             </div>
           </div>
 
-          {/* Right: photo */}
+          {/* Right: Beautiful animated gradient orbs with code */}
           <div className="flex-1 flex justify-center md:justify-end">
-            <div className="relative h-40 w-40 md:h-52 md:w-52">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-cyan-500 via-purple-500 to-pink-500 opacity-60 blur-2xl" />
-              <div className="relative flex h-full w-full items-center justify-center rounded-3xl border border-slate-700 bg-slate-900/70 shadow-xl overflow-hidden">
-                <img
-                  src="/wagisha_pic.jpeg"
-                  alt="Wagisha"
-                  className="h-full w-full object-cover"
-                />
+            <div className="relative h-64 w-64 md:h-80 md:w-80">
+              {/* Large glowing background orb */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/40 via-purple-500/40 to-pink-500/40 blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+              
+              {/* Central floating orb with code symbol */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative h-48 w-48 md:h-64 md:w-64">
+                  {/* Outer rotating ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-cyan-400/30 animate-spin" style={{ animationDuration: '20s' }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-cyan-400" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-purple-400" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-pink-400" />
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-cyan-300" />
+                  </div>
+                  
+                  {/* Main glowing orb */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/50 via-purple-500/50 to-pink-500/50 backdrop-blur-sm border border-cyan-400/20 shadow-2xl shadow-cyan-500/30 animate-pulse" style={{ animationDuration: '3s' }}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-cyan-300 text-5xl md:text-6xl font-mono font-bold">
+                        {'</>'}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Inner shimmer */}
+                  <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-300/20 to-transparent animate-spin" style={{ animationDuration: '8s' }} />
+                </div>
               </div>
+              
+              {/* Floating code brackets around */}
+              <div className="absolute top-8 left-8 text-cyan-400 text-4xl font-mono font-bold animate-bounce" style={{ animationDuration: '3s' }}>
+                {'{'}
+              </div>
+              <div className="absolute bottom-8 right-8 text-purple-400 text-4xl font-mono font-bold animate-bounce" style={{ animationDuration: '3s', animationDelay: '1s' }}>
+                {'}'}
+              </div>
+              <div className="absolute top-1/4 right-4 text-pink-400 text-3xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '0.5s' }}>
+                {'<'}
+              </div>
+              <div className="absolute bottom-1/4 left-4 text-cyan-300 text-3xl animate-bounce" style={{ animationDuration: '4s', animationDelay: '1.5s' }}>
+                {'/>'}
+              </div>
+              
+              {/* Small floating particles */}
+              <div className="absolute top-12 right-12 h-2 w-2 rounded-full bg-cyan-400 animate-ping" style={{ animationDelay: '0s' }} />
+              <div className="absolute bottom-12 left-12 h-2 w-2 rounded-full bg-purple-400 animate-ping" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/2 right-8 h-2 w-2 rounded-full bg-pink-400 animate-ping" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-1/3 left-8 h-2 w-2 rounded-full bg-cyan-300 animate-ping" style={{ animationDelay: '1.5s' }} />
+              
+              {/* Tech icons floating */}
+              <div className="absolute top-4 right-1/4 text-2xl animate-bounce" style={{ animationDuration: '5s' }}>⚛️</div>
+              <div className="absolute bottom-4 left-1/4 text-2xl animate-bounce" style={{ animationDuration: '5s', animationDelay: '2s' }}>💻</div>
             </div>
           </div>
         </div>
