@@ -1,4 +1,5 @@
 // src/components/Projects.jsx
+import { useNavigate } from "react-router-dom";
 import { FiExternalLink, FiFileText, FiGithub } from "react-icons/fi";
 
 const projects = [
@@ -9,7 +10,7 @@ const projects = [
     highlights: ["Sub-2s initial load time", "Optimized re-renders for smoother interactions", "Responsive design across mobile and desktop"],
     tech: ["React", "Vite", "JavaScript", "CSS animations"],
     liveDemo: "#",
-    caseStudy: "#",
+    caseStudy: "interactive-media-capture", // This matches the key in CaseStudy component
     github: "#",
   },
   {
@@ -19,12 +20,15 @@ const projects = [
     highlights: ["Virtualized tables for large datasets", "Server-side pagination and filtering", "Performance-optimized rendering"],
     tech: ["React", "TypeScript", "TanStack Table", "React Query", "REST APIs","CI/CD", "Git"],
     liveDemo: "#",
-    caseStudy: "#",
+    caseStudy: "enterprise-analytics-dashboard", // This matches the key in CaseStudy component
     github: "#",
   },
 ];
 
 export default function Projects() {
+
+  const navigate = useNavigate();
+
   return (
     <section
       id="projects"
@@ -95,15 +99,13 @@ export default function Projects() {
               <div className="flex flex-wrap gap-3 pt-4 border-t border-slate-800">
                 
 
-                <a
-                  href={project.caseStudy}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => navigate(`/case-study/${project.caseStudy}`)}
                   className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-200 hover:border-cyan-400 hover:text-cyan-400 transition-colors"
                 >
                   <FiFileText className="h-3.5 w-3.5" />
                   <span>Case Study</span>
-                </a>
+                </button>
 
                 <a
                   href={project.liveDemo}
