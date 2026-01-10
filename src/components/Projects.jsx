@@ -9,9 +9,9 @@ const projects = [
     overview: "Designed as a lightweight, performance-focused frontend application to explore client-side image processing, smooth UI transitions, and responsive layouts across devices.",
     highlights: ["Sub-2s initial load time", "Optimized re-renders for smoother interactions", "Responsive design across mobile and desktop"],
     tech: ["React", "Vite", "JavaScript", "CSS animations"],
-    liveDemo: "#",
+    liveDemo: "https://photo-booth-red.vercel.app/",
     caseStudy: "interactive-media-capture", // This matches the key in CaseStudy component
-    github: "#",
+    github: "https://github.com/Wagisha29/PhotoBooth",
   },
   {
     name: "Enterprise Analytics Dashboard",
