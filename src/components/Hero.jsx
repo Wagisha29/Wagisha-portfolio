@@ -11,23 +11,37 @@ function Hero() {
           {/* Left: intro / hero text */}
           <div className="flex-1">
             <p className="text-3xl font-bold text-cyan-400 mb-2">
-              Hey, I&apos;m Wagisha 👋
+              Hey, I&apos;m Wagisha
             </p>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Full-stack engineer building scalable, user-focused web applications from frontend to backend.
-              experiences.
+            Frontend Engineer building scalable, high-performance web applications at product scale
+
             </h1>
             <p className="mt-4 text-sm text-slate-300 md:text-base max-w-xl">
-              I craft responsive interfaces with React and Tailwind, focusing on
-              performance, accessibility, and smooth user experiences. I love
-              turning product ideas into polished, production-ready UIs.
+            I build data-driven, user-focused interfaces using React and TypeScript,
+with a strong emphasis on performance, accessibility, and clean UI
+architecture. I work closely with product managers, designers, and
+backend engineers to deliver production-ready features used at scale.
             </p>
             <p className="mt-3 text-xs text-slate-400 md:text-sm">
-              Tech stack: React, Next.js, Tailwind CSS, JavaScript, TypeScript, Node.js, Express, REST APIs, MongoDB, Git, GitHub
+            Core stack: React, TypeScript, JavaScript, Next.js, Tailwind CSS  
+            </p>
+            <p className="mt-3 text-xs text-slate-400 md:text-sm">
+                Supporting: Node.js, REST APIs, MongoDB, Git, Express, REST APIs, MongoDB, Git, GitHub
             </p>
 
             {/* CTAs */}
+
+            
             <div className="mt-6 flex flex-wrap items-center gap-4">
+
+            <a
+                href="/Wagisha_Singh_Resume.pdf"
+                className="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                Download Resume
+            </a>
+
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/30 hover:bg-cyan-400 transition-colors"

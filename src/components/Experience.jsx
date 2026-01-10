@@ -2,17 +2,17 @@
 const experiences = [
   {
     company: "Observe.AI",
-    role: "Software Development Engineer 1",
-    period: "July 2024 – Present",
+    role: "Software Engineer 1 – Frontend",
+    period: "July 2024 – December 2025",
     location: "Bengaluru, India",
     logo: "observe_logo.jpg",
     highlights: [
-      "Designed and implemented a reusable coaching template system, saving ~50 admin hours per week.",
-      "Built virtualized, filterable tables handling 1,000+ records with smooth performance and 2x faster data access.",
-      "Optimized frontend via lazy loading, memoization, and API trimming, reducing screen load times by 20–30%.",
-      "Implemented bulk update flows for 10,000+ agents daily, improving workflow efficiency by 30–40%.",
+      "Designed and delivered reusable frontend systems used by enterprise customers, reducing repetitive admin work and saving ~50 hours per week.",
+      "Built scalable, data-intensive UI components (virtualized tables, filters, search) handling 1,000+ records with smooth performance.",
+      "Improved frontend performance through lazy loading, memoization, and API optimization, reducing average load times by 20–30%.",
+      "Developed bulk update workflows supporting 10,000+ daily operations, improving user efficiency by 30–40%.",
     ],
-    tech: "React.js, TypeScript, Node.js, HTML5/CSS3, REST APIs, Git, Jenkins, Harness",
+    tech: "React, TypeScript, REST APIs, Node.js, CI/CD, Git",
   },
   {
     company: "Observe.AI",
@@ -21,34 +21,34 @@ const experiences = [
     location: "Bengaluru, India",
     logo: "observe_logo.jpg",
     highlights: [
-      "Built custom filter components that sped up querying and improved UX satisfaction scores.",
-      "Developed dynamic React components powering an AI chatbot UI, improving rendering efficiency and engagement.",
+      "Built reusable UI components and custom filters to improve query performance and overall usability.",
+      "Implemented React components supporting AI-driven workflows, improving rendering efficiency and user engagement.",
     ],
-    tech: "React.js, TypeScript, REST APIs, Git",
+    tech: "React, TypeScript, REST APIs",
   },
   {
     company: "ServiceNow",
     role: "Software Engineer Intern",
     period: "May 2023 – July 2023",
-    location: "Remote / India",
+    location: "Hyderabad, India",
     logo: "servicenow_logo.png",
     highlights: [
-      "Built JavaScript-driven interactive map visualizations to streamline complex data workflows.",
-      "Optimized ETL pipelines, improving migration accuracy and cutting processing time by ~25%.",
+      "Developed JavaScript-based UI visualizations to simplify exploration of complex datasets.",
+      "Optimized backend data pipelines, reducing processing time by ~25% and improving reliability.",
     ],
-    tech: "JavaScript, Data Visualization, ETL Pipelines",
+    tech: "JavaScript, Data Visualization, Data Pipelines",
   },
   {
     company: "Microsoft",
     role: "Software Engineer Intern",
     period: "May 2022 – July 2022",
-    location: "Remote / India",
+    location: "Remote",
     logo: "Microsoft_logo.webp",
     highlights: [
-      "Developed a content-based movie recommendation system using KNN and cosine similarity.",
-      "Implemented sentiment analysis on user reviews to improve recommendation relevance and UX.",
+      "Built a recommendation system using similarity-based algorithms to deliver personalized results.",
+      "Applied sentiment analysis techniques to improve relevance and user experience.",
     ],
-    tech: "Python, Machine Learning, KNN, NLP",
+    tech: "Python, Machine Learning, NLP",
   },
 ];
   
@@ -60,10 +60,11 @@ export default function Experience() {
     >
       <div className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-semibold tracking-tight mb-2">
-          Experience
+        Professional Experience
         </h2>
         <p className="text-sm text-slate-400 mb-8">
-          Roles, internships, and projects where I&apos;ve applied frontend and software engineering skills.
+        Professional experience building scalable, production-ready software in product-driven teams.
+
         </p>
 
         <div className="space-y-6">

@@ -17,27 +17,28 @@ const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "HTML", level: 90, icon: SiHtml5 },
-      { name: "CSS", level: 85, icon: SiCss3 },
-      { name: "JavaScript", level: 80, icon: SiJavascript },
-      { name: "React", level: 80, icon: SiReact },
-      { name: "Tailwind CSS", level: 75, icon: SiTailwindcss },
+      { name: "TypeScript", level: "Advanced", icon: SiHtml5 },
+      { name: "HTML", level: "Proficient", icon: SiHtml5 },
+      { name: "CSS", level: "Proficient", icon: SiCss3 },
+      { name: "JavaScript", level: "Advanced", icon: SiJavascript },
+      { name: "React", level: "Advanced", icon: SiReact },
+      { name: "Tailwind CSS", level: "Proficient", icon: SiTailwindcss },
     ],
   },
   {
-    category: "Tools",
+    category: "Tools & Workflow",
     items: [
-      { name: "Git", level: 80, icon: SiGit },
-      { name: "GitHub", level: 80, icon: SiGithub },
-      { name: "Vite", level: 70, icon: SiVite },
-      { name: "npm", level: 75, icon: SiNpm },
+      { name: "Git", level: "Proficient", icon: SiGit },
+      { name: "GitHub", level: "Proficient", icon: SiGithub },
+      { name: "Vite", level: "Working Knowledge", icon: SiVite },
+      { name: "npm", level: "Proficient", icon: SiNpm },
     ],
   },
   {
-    category: "Backend & APIs (Basics)",
+    category: "APIs & Backend (Supporting)",
     items: [
-      { name: "REST APIs", level: 65, icon: TbApi },
-      { name: "Firebase", level: 60, icon: SiFirebase },
+      { name: "REST APIs", level: "Proficient", icon: TbApi },
+      { name: "Firebase", level: "Working Knowledge", icon: SiFirebase },
     ],
   },
 ];
@@ -53,7 +54,8 @@ export default function Skills() {
             Skills
           </h2>
           <p className="text-sm text-slate-400 mb-8">
-            A quick view of the technologies and tools I use most often.
+          A focused snapshot of the technologies I use to build scalable, production-ready frontend systems.
+
           </p>
   
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -79,17 +81,11 @@ export default function Skills() {
                           </span>
                         </div>
                         <span className="text-[11px] md:text-xs text-slate-400">
-                          {item.level}%
+                          {item.level}
                         </span>
                       </div>
   
-                      {/* Progress bar */}
-                      <div className="h-2.5 w-full rounded-full bg-slate-800 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500"
-                          style={{ width: `${item.level}%` }}
-                        />
-                      </div>
+                      {/* Progress bar - removed since we're using labels now */}
                     </div>
                   ))}
                 </div>

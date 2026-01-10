@@ -1,7 +1,7 @@
 import { useState } from "react";
 const sections = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  { id: "about", label: "Profile" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },

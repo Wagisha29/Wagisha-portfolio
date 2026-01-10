@@ -6,7 +6,7 @@ function About() {
     >
       <div className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-semibold tracking-tight mb-6">
-          About Me
+        Profile
         </h2>
 
         <div className="grid gap-10 md:grid-cols-[1.1fr,2fr] items-start">
@@ -24,35 +24,25 @@ function About() {
 
           {/* Right: Text content */}
           <div className="space-y-4 text-sm text-slate-300 md:text-base">
-            <p>
-              I’m a Frontend Engineer (SDE-I at Observe.AI) with 1.5+ years of
-              experience building scalable, high-performance web applications
-              used by thousands of users daily. I specialize in React.js,
-              TypeScript, and modern frontend architecture, with a strong focus
-              on clean code, performance optimization, and intuitive user
-              experiences.
+
+          <p>
+          Frontend Engineer • React • TypeScript • Scalable UI Systems
+
             </p>
             <p>
-              At Observe.AI, I’ve owned and shipped complex, data-heavy features
-              such as virtualized tables, bulk update workflows, and reusable UI
-              systems—improving performance and reducing average load times by
-              up to 30% while significantly enhancing user productivity. I enjoy
-              working closely with product and backend teams and taking
-              end-to-end ownership of features.
+            I’m a Frontend Engineer with experience building scalable, high-performance web applications in product-driven environments. Currently, I work at Observe.AI, where I design and deliver user-facing features used by thousands of users daily. My primary expertise lies in React, TypeScript, and modern frontend architecture, with a strong focus on performance, maintainability, and clean UI systems.
             </p>
             <p>
-              I hold a B.Tech in Electronics and Communication Engineering from
-              Indira Gandhi Delhi Technical University for Women (IGDTUW),
-              graduated in 2024, with a GPA of 8.7. Alongside my professional
-              work, I have a strong foundation in Data Structures and
-              Algorithms, having solved 700+ problems on LeetCode, which helps
-              me write scalable, maintainable, and well-structured code.
+            At Observe.AI, I’ve owned and shipped complex, data-intensive features such as virtualized tables, bulk update workflows, and reusable component systems. My work has improved frontend performance by up to 30%, reduced load times, and significantly enhanced user productivity. I regularly collaborate with product managers, designers, and backend engineers, taking end-to-end ownership from requirements to production.
+
             </p>
             <p>
-              I’m passionate about learning, building real-world products, and
-              continuously improving as an engineer. Outside of work, I enjoy
-              experimenting with side projects, refining frontend performance,
-              and exploring system design concepts.
+            I enjoy working on frontend problems that involve scale, data, and real-world constraints, and I care deeply about building interfaces that are both performant and intuitive. I thrive in collaborative, fast-paced teams where engineering decisions directly impact product quality and user experience.
+
+            </p>
+            <p>
+            I am open to relocation and global opportunities, particularly in Canada, the UK, Europe, and the UAE.
+
             </p>
           </div>
         </div>
