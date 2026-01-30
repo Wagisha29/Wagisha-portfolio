@@ -1,6 +1,17 @@
 // src/components/Experience.jsx
 const experiences = [
   {
+    company: "Arctic Wolf",
+    role: "Software Engineer 2",
+    period: "January 2026 – Present",
+    location: "Bengaluru, India",
+    logo: "arctic-wolf-logo.png",
+    highlights: [
+      "Developed AI Customer Engagement Assistant, a chatbot that helps customers with their queries and issues.",
+      ],
+    tech: "React, TypeScript, Material UI, REST APIs, Node.js, CI/CD, Git",
+  },
+  {
     company: "Observe.AI",
     role: "Software Engineer 1 – Frontend",
     period: "July 2024 – December 2025",
@@ -12,7 +23,7 @@ const experiences = [
       "Improved frontend performance through lazy loading, memoization, and API optimization, reducing average load times by 20–30%.",
       "Developed bulk update workflows supporting 10,000+ daily operations, improving user efficiency by 30–40%.",
     ],
-    tech: "React, TypeScript, REST APIs, Node.js, CI/CD, Git",
+    tech: "React, TypeScript, Ant Design, REST APIs, Node.js, CI/CD, Git",
   },
   {
     company: "Observe.AI",
