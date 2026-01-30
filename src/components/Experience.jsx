@@ -2,6 +2,7 @@
 const experiences = [
   {
     company: "Arctic Wolf",
+    companyUrl: "https://arcticwolf.com",
     role: "Software Engineer 2",
     period: "January 2026 – Present",
     location: "Bengaluru, India",
@@ -13,6 +14,7 @@ const experiences = [
   },
   {
     company: "Observe.AI",
+    companyUrl: "https://www.observe.ai",
     role: "Software Engineer 1 – Frontend",
     period: "July 2024 – December 2025",
     location: "Bengaluru, India",
@@ -27,6 +29,7 @@ const experiences = [
   },
   {
     company: "Observe.AI",
+    companyUrl: "https://www.observe.ai",
     role: "Software Engineer Intern",
     period: "Jan 2024 – July 2024",
     location: "Bengaluru, India",
@@ -39,6 +42,7 @@ const experiences = [
   },
   {
     company: "ServiceNow",
+    companyUrl: "https://www.servicenow.com",
     role: "Software Engineer Intern",
     period: "May 2023 – July 2023",
     location: "Hyderabad, India",
@@ -51,9 +55,10 @@ const experiences = [
   },
   {
     company: "Microsoft",
+    companyUrl: "https://www.microsoft.com",
     role: "Software Engineer Intern",
     period: "May 2022 – July 2022",
-    location: "Remote",
+    location: "Hyderabad, India",
     logo: "Microsoft_logo.webp",
     highlights: [
       "Built a recommendation system using similarity-based algorithms to deliver personalized results.",
@@ -98,7 +103,19 @@ export default function Experience() {
                       {exp.role}
                     </h3>
                     <p className="text-xs text-slate-300">
-                      {exp.company} · {exp.location}
+                      {exp.companyUrl ? (
+                        <a
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+                        >
+                          {exp.company}
+                        </a>
+                      ) : (
+                        exp.company
+                      )}{" "}
+                      · {exp.location}
                     </p>
                   </div>
                 </div>
