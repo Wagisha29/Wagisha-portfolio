@@ -3,12 +3,12 @@ const experiences = [
   {
     company: "Arctic Wolf",
     companyUrl: "https://arcticwolf.com",
-    role: "Software Engineer 2",
+    role: "Software Engineer 2 - Fullstack",
     period: "January 2026 – Present",
     location: "Bengaluru, India",
     logo: "arctic-wolf-logo.png",
     highlights: [
-      "Developed AI Customer Engagement Assistant, a chatbot that helps customers with their queries and issues.",
+      "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.", "Integrated MCP Apps to enable secure, cross-platform communication between internal systems."
       ],
     tech: "React, TypeScript, Material UI, REST APIs, Node.js, CI/CD, Git",
   },
