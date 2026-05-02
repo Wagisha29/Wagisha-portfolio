@@ -14,17 +14,19 @@ function Hero() {
               Hey, I&apos;m Wagisha
             </p>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Frontend Engineer building scalable, high-performance web applications at product scale
+            Writing code that scales with people and problems
 
             </h1>
             <p className="mt-4 text-sm text-slate-300 md:text-base max-w-xl">
-            I build data-driven, user-focused interfaces using React and TypeScript,
+            {/* I build data-driven, user-focused interfaces using React and TypeScript,
 with a strong emphasis on performance, accessibility, and clean UI
 architecture. I work closely with product managers, designers, and
-backend engineers to deliver production-ready features used at scale.
+backend engineers to deliver production-ready features used at scale. */}
+              From APIs to interfaces, I build products that are fast, intuitive, and built to scale,
+              with a focus on clean code and real-world impact.
             </p>
             <p className="mt-3 text-xs text-slate-400 md:text-sm">
-            Core stack: React, TypeScript, JavaScript, Next.js, Tailwind CSS  
+            Core stack: Python, Fast API, Django, React, TypeScript, JavaScript, Next.js, Tailwind CSS, Material UI, Antd Design  
             </p>
             <p className="mt-3 text-xs text-slate-400 md:text-sm">
                 Supporting: Node.js, REST APIs, MongoDB, Git, Express, REST APIs, MongoDB, Git, GitHub

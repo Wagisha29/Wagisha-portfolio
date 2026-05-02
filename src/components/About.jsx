@@ -15,9 +15,9 @@ function About() {
             <div className="relative">
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-cyan-500/40 via-purple-500/30 to-pink-500/30 blur-lg" />
               <img
-                src="/wagisha.jpeg"
+                src="/wagisha_new.jpeg"
                 alt="Portrait of Wagisha"
-                className="relative w-full h-auto max-w-md rounded-3xl object-contain border-2 border-slate-700 shadow-xl shadow-cyan-500/20"
+                className="relative w-full h-auto max-w-2xl rounded-3xl object-contain border-2 border-slate-700 shadow-xl shadow-cyan-500/20"
               />
             </div>
           </div>
