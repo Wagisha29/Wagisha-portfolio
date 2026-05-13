@@ -1,4 +1,5 @@
 // src/components/CaseStudy.jsx
+import { useLayoutEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -107,6 +108,11 @@ const caseStudyData = {
 export default function CaseStudy() {
   const { projectId } = useParams();
   const navigate = useNavigate();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId]);
+
   const caseStudy = caseStudyData[projectId];
 
   if (!caseStudy) {
