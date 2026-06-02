@@ -75,7 +75,7 @@ export default function Experience() {
       className="bg-slate-950 text-slate-50 border-t border-slate-800"
     >
       <div className="mx-auto max-w-5xl px-4 py-16">
-        <h2 className="text-2xl font-semibold tracking-tight mb-2">
+        <h2 className="text-6xl font-semibold tracking-tight mb-2">
         Professional Experience
         </h2>
         <p className="text-sm text-slate-400 mb-8">

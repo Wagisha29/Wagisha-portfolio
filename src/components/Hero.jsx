@@ -3,7 +3,6 @@ import { FiLinkedin, FiMail, FiGithub, FiTwitter } from "react-icons/fi";
 const coreStack = [
   "Python",
   "FastAPI",
-  "Django",
   "React",
   "TypeScript",
   "JavaScript",
