@@ -12,12 +12,11 @@ const coreStack = [
 ];
 
 const supportingStack = [
-  "Node.js",
-  "REST APIs",
-  "MongoDB",
   "Git",
-  "Express",
   "GitHub",
+  "MongoDB",
+  "REST APIs",
+  "CI/CD",
 ];
 
 function Hero() {
