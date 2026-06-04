@@ -14,7 +14,7 @@ const experiences = [
       "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.",
       "Integrated MCP Apps to enable secure, cross-platform communication between internal systems.",
     ],
-    tech: "React, TypeScript, Material UI, REST APIs, Node.js, CI/CD, Git",
+    tech: "Python, React, TypeScript, Material UI, REST APIs, Websocket",
   },
   {
     company: "Observe.AI",
@@ -55,7 +55,7 @@ const experiences = [
       "Developed JavaScript-based UI visualizations to simplify exploration of complex datasets.",
       "Optimized backend data pipelines, reducing processing time by ~25% and improving reliability.",
     ],
-    tech: "JavaScript, Data Visualization, Data Pipelines",
+    tech: "JavaScript, Data Visualization, Data Pipelines, Node.js",
   },
   {
     company: "Microsoft",
@@ -68,7 +68,7 @@ const experiences = [
       "Built a recommendation system using similarity-based algorithms to deliver personalized results.",
       "Applied sentiment analysis techniques to improve relevance and user experience.",
     ],
-    tech: "Python, Machine Learning, NLP",
+    tech: "Python, Machine Learning, NLP, KNN algorithms",
   },
 ];
 
