@@ -1,4 +1,7 @@
 // src/components/Experience.jsx
+import { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+
 const experiences = [
   {
     company: "Arctic Wolf",
@@ -8,9 +11,10 @@ const experiences = [
     location: "Bengaluru, India",
     logo: "arctic-wolf-logo.png",
     highlights: [
-      "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.", "Integrated MCP Apps to enable secure, cross-platform communication between internal systems."
-      ],
-    tech: "React, TypeScript, Material UI, REST APIs, Node.js, CI/CD, Git",
+      "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.",
+      "Integrated MCP Apps to enable secure, cross-platform communication between internal systems.",
+    ],
+    tech: "Python, React, TypeScript, Material UI, REST APIs, Websocket",
   },
   {
     company: "Observe.AI",
@@ -51,7 +55,7 @@ const experiences = [
       "Developed JavaScript-based UI visualizations to simplify exploration of complex datasets.",
       "Optimized backend data pipelines, reducing processing time by ~25% and improving reliability.",
     ],
-    tech: "JavaScript, Data Visualization, Data Pipelines",
+    tech: "JavaScript, Data Visualization, Data Pipelines, Node.js",
   },
   {
     company: "Microsoft",
@@ -64,78 +68,127 @@ const experiences = [
       "Built a recommendation system using similarity-based algorithms to deliver personalized results.",
       "Applied sentiment analysis techniques to improve relevance and user experience.",
     ],
-    tech: "Python, Machine Learning, NLP",
+    tech: "Python, Machine Learning, NLP, KNN algorithms",
   },
 ];
-  
+
 export default function Experience() {
+  const [openIndex, setOpenIndex] = useState(0);
+
   return (
     <section
       id="experience"
       className="bg-slate-950 text-slate-50 border-t border-slate-800"
     >
-      <div className="mx-auto max-w-5xl px-4 py-16">
-        <h2 className="text-6xl font-semibold tracking-tight mb-2">
-        Professional Experience
+      <div className="mx-auto max-w-6xl px-4 py-20">
+        <h2 className="text-6xl font-semibold tracking-tight mb-3">
+          Professional Experience
         </h2>
-        <p className="text-sm text-slate-400 mb-8">
-        Professional experience building scalable, production-ready software in product-driven teams.
-
+        <p className="text-sm text-slate-400 mb-12 max-w-2xl">
+          Tap a role to expand details — production work across security, AI,
+          and enterprise products.
         </p>
 
-        <div className="space-y-6">
-          {experiences.map((exp) => (
-            <article
-              key={`${exp.company}-${exp.role}-${exp.period}`}
-              className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5"
-            >
-              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
-                <div className="flex items-center gap-3">
+        <div className="space-y-3">
+          {experiences.map((exp, index) => {
+            const isOpen = openIndex === index;
+            const isCurrent = exp.period.includes("Present");
+            const key = `${exp.company}-${exp.role}-${exp.period}`;
+
+            return (
+              <article
+                key={key}
+                className={`overflow-hidden rounded-2xl border transition-colors ${
+                  isOpen
+                    ? "border-cyan-500/50 bg-slate-900/80"
+                    : "border-slate-800 bg-slate-900/40 hover:border-slate-700"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`panel-${index}`}
+                  className="flex w-full items-center gap-4 p-5 text-left md:gap-5 md:p-6"
+                >
                   {exp.logo && (
                     <img
                       src={exp.logo}
-                      alt={exp.company}
-                      className="h-8 w-8 rounded-md object-contain bg-slate-800"
+                      alt=""
+                      className="h-11 w-11 shrink-0 rounded-xl border border-slate-700 bg-slate-800 object-contain p-1.5 md:h-12 md:w-12"
                     />
                   )}
-                  <div>
-                    <h3 className="text-sm font-semibold text-slate-50">
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      {isCurrent && (
+                        <span className="rounded-full bg-cyan-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-cyan-300">
+                          Current
+                        </span>
+                      )}
+                      <span className="text-xs text-slate-500">{exp.period}</span>
+                    </div>
+                    <h3 className="mt-1 text-base font-semibold text-slate-50 md:text-lg">
                       {exp.role}
                     </h3>
-                    <p className="text-xs text-slate-300">
-                      {exp.companyUrl ? (
+                    <p className="mt-0.5 truncate text-sm text-slate-400">
+                      {exp.company}
+                      <span className="text-slate-600"> · </span>
+                      {exp.location}
+                    </p>
+                  </div>
+
+                  <FiChevronDown
+                    className={`h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 ${
+                      isOpen ? "rotate-180 text-cyan-400" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+                  id={`panel-${index}`}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="border-t border-slate-800 px-5 pb-6 pt-4 md:px-6 md:pb-7">
+                      {exp.companyUrl && (
                         <a
                           href={exp.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+                          className="mb-4 inline-block text-sm font-medium text-cyan-400 hover:text-cyan-300 hover:underline"
                         >
-                          {exp.company}
+                          Visit {exp.company} →
                         </a>
-                      ) : (
-                        exp.company
-                      )}{" "}
-                      · {exp.location}
-                    </p>
+                      )}
+
+                      <ul className="space-y-3 text-sm leading-relaxed text-slate-300 md:text-base">
+                        {exp.highlights.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {exp.tech.split(", ").map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs text-slate-400">{exp.period}</p>
-              </div>
-
-              <ul className="mb-3 space-y-1.5 text-xs text-slate-300">
-                {exp.highlights.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-[11px] text-slate-400">
-                <span className="font-semibold text-slate-300">Tech:</span> {exp.tech}
-              </p>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
