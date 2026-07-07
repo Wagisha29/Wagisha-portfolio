@@ -8,7 +8,7 @@ export default function Contact() {
         className="bg-slate-950 text-slate-50 border-t border-slate-800"
       >
         <div className="mx-auto max-w-5xl px-4 py-16">
-          <h2 className="text-6xl font-semibold tracking-tight mb-2">
+          <h2 className="text-3xl font-semibold tracking-tight mb-2 sm:text-4xl lg:text-6xl">
           Let’s Connect
           </h2>
           <p className="text-sm text-slate-400 mb-6">
@@ -30,13 +30,13 @@ export default function Contact() {
               <div className="space-y-2 text-sm">
                 <a
                   href="mailto:wagisha29@gmail.com"
-                  className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+                  className="flex flex-col gap-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2.5 text-slate-100 transition-colors hover:border-cyan-400 hover:text-cyan-200 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span className="flex items-center gap-2">
-                    <FiMail className="h-4 w-4" />
+                    <FiMail className="h-4 w-4 shrink-0" />
                     <span>Email</span>
                   </span>
-                  <span className="text-xs text-slate-400">
+                  <span className="truncate text-xs text-slate-400 sm:max-w-[60%] sm:text-right">
                     wagisha29@gmail.com
                   </span>
                 </a>
@@ -45,13 +45,13 @@ export default function Contact() {
                   href="https://github.com/Wagisha29"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+                  className="flex flex-col gap-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2.5 text-slate-100 transition-colors hover:border-cyan-400 hover:text-cyan-200 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span className="flex items-center gap-2">
-                    <FiGithub className="h-4 w-4" />
+                    <FiGithub className="h-4 w-4 shrink-0" />
                     <span>GitHub</span>
                   </span>
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-slate-400 sm:text-right">
                     @Wagisha29
                   </span>
                 </a>
@@ -60,13 +60,13 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/wagisha29"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-100 hover:border-cyan-400 hover:text-cyan-200 transition-colors"
+                  className="flex flex-col gap-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2.5 text-slate-100 transition-colors hover:border-cyan-400 hover:text-cyan-200 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span className="flex items-center gap-2">
-                    <FiLinkedin className="h-4 w-4" />
+                    <FiLinkedin className="h-4 w-4 shrink-0" />
                     <span>LinkedIn</span>
                   </span>
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-slate-400 sm:text-right">
                     in/wagisha29
                   </span>
                 </a>

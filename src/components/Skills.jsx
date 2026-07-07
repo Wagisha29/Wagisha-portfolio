@@ -50,7 +50,7 @@ export default function Skills() {
         className="bg-slate-950 text-slate-50 border-t border-slate-800"
       >
         <div className="mx-auto max-w-6xl px-4 py-20">
-          <h2 className="text-6xl font-semibold tracking-tight mb-3">
+          <h2 className="text-3xl font-semibold tracking-tight mb-3 sm:text-4xl lg:text-6xl">
             Skills
           </h2>
           <p className="text-sm text-slate-400 mb-8">
@@ -71,16 +71,16 @@ export default function Skills() {
                 <div className="space-y-4">
                   {group.items.map((item) => (
                     <div key={item.name}>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xl text-cyan-400">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div className="flex min-w-0 items-center gap-2">
+                          <span className="shrink-0 text-xl text-cyan-400">
                             <item.icon />
                           </span>
                           <span className="text-sm md:text-base text-slate-200">
                             {item.name}
                           </span>
                         </div>
-                        <span className="text-[11px] md:text-xs text-slate-400">
+                        <span className="shrink-0 text-[11px] md:text-xs text-slate-400">
                           {item.level}
                         </span>
                       </div>
