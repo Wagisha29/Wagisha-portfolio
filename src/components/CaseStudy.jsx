@@ -142,7 +142,7 @@ export default function CaseStudy() {
           <span>Back to Projects</span>
         </button>
 
-        <h1 className="text-4xl font-bold mb-6">{caseStudy.name}</h1>
+        <h1 className="text-2xl font-bold mb-6 sm:text-3xl md:text-4xl">{caseStudy.name}</h1>
 
         <Section title="Problem Statement" text={caseStudy.problemStatement} />
         <Section title="Overview" text={caseStudy.overview} />
