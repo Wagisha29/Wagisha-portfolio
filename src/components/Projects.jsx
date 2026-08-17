@@ -4,16 +4,6 @@ import { FiExternalLink, FiFileText, FiGithub } from "react-icons/fi";
 
 const projects = [
   {
-    name: "Interactive Media Capture Web App",
-    problemStatement: "A production-style web application focused on fast, responsive image capture and client-side processing with performance-optimized UI interactions.",
-    overview: "Designed as a lightweight, performance-focused frontend application to explore client-side image processing, smooth UI transitions, and responsive layouts across devices.",
-    highlights: ["Sub-2s initial load time", "Optimized re-renders for smoother interactions", "Responsive design across mobile and desktop"],
-    tech: ["React", "Vite", "JavaScript", "CSS animations"],
-    liveDemo: "https://photo-booth-red.vercel.app/",
-    caseStudy: "interactive-media-capture", // This matches the key in CaseStudy component
-    github: "https://github.com/Wagisha29/PhotoBooth",
-  },
-  {
     name: "SpendWise",
     problemStatement: "A modern, intelligent personal finance tracking dashboard and AI financial copilot.",
     overview: "SpendWise helps users track daily transactions, monitor income versus expenses, and visualize spending habits across customizable categories. It features Google Authentication, interactive monthly analytics, and WiseBot — an AI copilot for end-of-month budget audits and actionable financial recommendations.",
@@ -22,6 +12,16 @@ const projects = [
     liveDemo: "https://spendwise-io.vercel.app/",
     caseStudy: "spendwise",
     github: "#",
+  },
+  {
+    name: "Interactive Media Capture Web App",
+    problemStatement: "A production-style web application focused on fast, responsive image capture and client-side processing with performance-optimized UI interactions.",
+    overview: "Designed as a lightweight, performance-focused frontend application to explore client-side image processing, smooth UI transitions, and responsive layouts across devices.",
+    highlights: ["Sub-2s initial load time", "Optimized re-renders for smoother interactions", "Responsive design across mobile and desktop"],
+    tech: ["React", "Vite", "JavaScript", "CSS animations"],
+    liveDemo: "https://photo-booth-red.vercel.app/",
+    caseStudy: "interactive-media-capture", // This matches the key in CaseStudy component
+    github: "https://github.com/Wagisha29/PhotoBooth",
   },
 ];
 

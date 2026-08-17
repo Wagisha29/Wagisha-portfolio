@@ -13,8 +13,9 @@ const experiences = [
     highlights: [
       "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.",
       "Integrated MCP Apps to enable secure, cross-platform communication between internal systems.",
+      "Developing Zoom RTMS integration secured with Okta authentication and real-time WebSocket communication.",
     ],
-    tech: "Python, React, TypeScript, Material UI, REST APIs, Websocket",
+    tech: "Python, React, TypeScript, Material UI, REST APIs, WebSocket, Okta",
   },
   {
     company: "Observe.AI",

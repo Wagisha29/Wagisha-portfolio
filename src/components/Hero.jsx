@@ -9,6 +9,7 @@ const coreStack = [
   "Next.js",
   "Tailwind CSS",
   "Material UI",
+  "WebSocket",
 ];
 
 const supportingStack = [
