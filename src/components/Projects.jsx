@@ -14,13 +14,13 @@ const projects = [
     github: "https://github.com/Wagisha29/PhotoBooth",
   },
   {
-    name: "Enterprise Analytics Dashboard",
-    problemStatement: "A data-intensive dashboard designed to help users explore large datasets efficiently without sacrificing performance",
-    overview: "This project simulates a real-world enterprise analytics product, focusing on scalable frontend architecture, efficient data rendering, and smooth user interactions for large datasets.",
-    highlights: ["Virtualized tables for large datasets", "Server-side pagination and filtering", "Performance-optimized rendering"],
-    tech: ["React", "TypeScript", "TanStack Table", "React Query", "REST APIs","CI/CD", "Git"],
-    liveDemo: "#",
-    caseStudy: "enterprise-analytics-dashboard", // This matches the key in CaseStudy component
+    name: "SpendWise",
+    problemStatement: "A modern, intelligent personal finance tracking dashboard and AI financial copilot.",
+    overview: "SpendWise helps users track daily transactions, monitor income versus expenses, and visualize spending habits across customizable categories. It features Google Authentication, interactive monthly analytics, and WiseBot — an AI copilot for end-of-month budget audits and actionable financial recommendations.",
+    highlights: ["KPI metric cards & quick-add transactions", "12-month income vs. expense trends", "AI copilot (WiseBot) for budget audits"],
+    tech: ["React", "Vite", "Tailwind CSS", "Recharts", "Supabase", "Google OAuth", "LLM API", "Vercel"],
+    liveDemo: "https://spendwise-io.vercel.app/",
+    caseStudy: "spendwise",
     github: "#",
   },
 ];

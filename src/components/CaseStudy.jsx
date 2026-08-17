@@ -44,64 +44,64 @@ const caseStudyData = {
     ],
     results:
       "The application loads in under 2 seconds on average devices and provides a smooth, responsive photo capture experience. All image processing happens client-side, with no external dependencies, resulting in a fast and reliable user experience across devices.",
-    improvements: [
-      "Improve accessibility for keyboard navigation and screen readers",
-      "Add filter previews before capture",
-      "Enhance error handling for camera permissions and unsupported devices",
-    ],
   },
 
-  "enterprise-analytics-dashboard": {
-    name: "Enterprise Analytics Dashboard",
+  spendwise: {
+    name: "SpendWise",
     problemStatement:
-      "Enterprise users need to explore large datasets efficiently, but traditional tables often become slow and unresponsive as data size grows. The challenge was to design a frontend system that could handle large volumes of data without sacrificing performance or usability.",
+      "Most personal finance tools either overwhelm users with raw transaction lists or fail to turn spending data into actionable insights. The challenge was to build a dashboard that makes daily tracking effortless while surfacing clear trends, category breakdowns, and AI-driven recommendations users can act on.",
     overview:
-      "This project simulates a real-world enterprise analytics product, focusing on scalable frontend architecture, efficient data rendering, and smooth user interactions when working with large datasets.",
+      "SpendWise is a modern personal finance tracking dashboard and AI financial copilot. Users track daily transactions, monitor income versus expenses, and visualize spending habits across customizable categories using clean data visualizations. It features seamless Google Authentication, interactive monthly analytics, and WiseBot — an integrated AI copilot for end-of-month budget audits and actionable financial recommendations.",
     images: [
-      "/project-images/analytics-dashboard-1.jpg",
-      "/project-images/analytics-dashboard-2.jpg",
-      "/project-images/analytics-dashboard-3.jpg",
+      "/project-images/spendWise1.jpg",
+      "/project-images/spendWise2.jpg",
+      "/project-images/spendWise3.jpg",
+      "/project-images/spendWise4.jpg",
     ],
     goals: [
-      "Support smooth interaction with datasets of 10k+ rows",
-      "Minimize initial load time and unnecessary re-renders",
-      "Provide a clean, intuitive UI for non-technical users",
+      "Provide one-click Google Sign-In with isolated, secure user workspaces",
+      "Surface key financial KPIs — monthly income, expenses, and net savings rate",
+      "Enable quick income and expense entry with categorized, date-stamped records",
+      "Deliver rich analytics: 12-month trends, category shifts, and breakdown charts",
+      "Integrate an AI copilot for automated summaries and natural language financial queries",
     ],
     constraints: [
-      "Frontend-heavy architecture with limited backend complexity",
-      "Network latency and browser rendering limitations",
+      "Real-time chart rendering must stay responsive as transaction volume grows",
+      "AI responses must be context-aware using aggregated monthly data without exposing raw PII",
+      "Multi-tenant data isolation required for every authenticated user session",
     ],
     highlights: [
-      "Virtualized tables for large datasets",
-      "Server-side pagination and filtering",
-      "Performance-optimized rendering",
+      "Top KPI metric cards with net savings rate and balance badges",
+      "Income vs. expense 12-month bar chart and multi-color stacked category chart",
+      "Donut chart with real-time percentage badges and average daily spend metrics",
+      "WiseBot AI copilot for end-of-month audits and savings suggestions",
+      "Recent activity feed with search, category tags, and inline deletion",
     ],
     tech: [
       "React",
-      "TypeScript",
-      "TanStack Table",
-      "React Query",
-      "REST APIs",
-      "CI/CD",
-      "Git",
+      "Vite",
+      "Tailwind CSS",
+      "Recharts",
+      "Supabase",
+      "Google OAuth 2.0",
+      "LLM API (Gemini / OpenAI)",
+      "Vercel",
+      "Supabase Edge Functions",
     ],
     challenges: [
-      "Rendering large datasets caused UI lag and performance bottlenecks",
-      "Frequent re-renders during filtering and sorting",
-      "Balancing feature richness with UI simplicity",
+      "Designing glassmorphism tooltips and multi-chart layouts that remain readable on all screen sizes",
+      "Aggregating transaction data efficiently for both real-time dashboard metrics and AI payloads",
+      "Passing structured monthly JSON to an LLM while keeping response latency low",
+      "Ensuring strict per-user data tenancy across auth, storage, and AI query scopes",
     ],
     solutions: [
-      "Implemented table virtualization to render only visible rows",
-      "Moved pagination, filtering, and sorting to the server",
-      "Used memoization and debounced inputs to reduce re-renders",
+      "Built reusable Recharts components — donut, stacked bar, and trend charts — with custom glassmorphism tooltips",
+      "Used Supabase with Google OAuth 2.0 for auth and row-level security to isolate user workspaces",
+      "Computed smart metrics (average daily spend, top category impact) client-side from live transaction state",
+      "Fed aggregated monthly summaries to the LLM API via Supabase Edge Functions for context-aware WiseBot responses",
     ],
     results:
-      "The dashboard handles datasets of over 10,000 rows smoothly, with an initial render time under 1.5 seconds. User interactions such as sorting and filtering remain responsive, and the architecture is scalable for future enhancements.",
-    improvements: [
-      "Add column customization and user preference persistence",
-      "Improve accessibility and keyboard navigation",
-      "Introduce client-side caching for frequently accessed data",
-    ],
+      "SpendWise delivers a polished financial dashboard where users can sign in with Google, log transactions in seconds, and immediately see income-versus-expense trends and category breakdowns. WiseBot generates end-of-month budget audits with actionable savings suggestions based on discretionary versus fixed expense ratios, and supports natural language queries for custom date ranges and category spending.",
   },
 };
 
@@ -195,7 +195,6 @@ export default function CaseStudy() {
         <ListSection title="Challenges" items={caseStudy.challenges} />
         <ListSection title="Solutions" items={caseStudy.solutions} />
         <Section title="Results" text={caseStudy.results} />
-        <ListSection title="What I’d Improve Next" items={caseStudy.improvements} />
       </div>
     </div>
   );
