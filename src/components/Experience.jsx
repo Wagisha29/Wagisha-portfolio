@@ -1,4 +1,3 @@
-// src/components/Experience.jsx
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -10,12 +9,14 @@ const experiences = [
     period: "January 2026 – Present",
     location: "Bengaluru, India",
     logo: "arctic-wolf-logo.png",
+    teaser:
+      "Building AI-powered security tools — Aurora Assistant, MCP integrations, and Zoom RTMS.",
     highlights: [
-      "Building Aurora Security Assistant, a conversation assistance that helps customers with their queries and issues.",
-      "Integrated MCP Apps to enable secure, cross-platform communication between internal systems.",
+      "Building Aurora Security Assistant, a conversational AI that helps customers resolve security queries and issues.",
+      "Integrated MCP Apps to enable secure, cross-platform communication between internal AI systems.",
       "Developing Zoom RTMS integration secured with Okta authentication and real-time WebSocket communication.",
     ],
-    tech: "Python, React, TypeScript, Material UI, REST APIs, WebSocket, Okta",
+    tech: "Python, React, TypeScript, Material UI, REST APIs, WebSocket, Okta, MCP",
   },
   {
     company: "Observe.AI",
@@ -24,6 +25,8 @@ const experiences = [
     period: "July 2024 – December 2025",
     location: "Bengaluru, India",
     logo: "observe_logo.jpg",
+    teaser:
+      "Enterprise frontend systems — virtualized tables, bulk workflows, and 20–30% performance gains.",
     highlights: [
       "Designed and delivered reusable frontend systems used by enterprise customers, reducing repetitive admin work and saving ~50 hours per week.",
       "Built scalable, data-intensive UI components (virtualized tables, filters, search) handling 1,000+ records with smooth performance.",
@@ -39,6 +42,8 @@ const experiences = [
     period: "Jan 2024 – July 2024",
     location: "Bengaluru, India",
     logo: "observe_logo.jpg",
+    teaser:
+      "Reusable UI components and AI-driven workflow interfaces at an enterprise AI platform.",
     highlights: [
       "Built reusable UI components and custom filters to improve query performance and overall usability.",
       "Implemented React components supporting AI-driven workflows, improving rendering efficiency and user engagement.",
@@ -52,6 +57,8 @@ const experiences = [
     period: "May 2023 – July 2023",
     location: "Hyderabad, India",
     logo: "servicenow_logo.png",
+    teaser:
+      "Data visualization UIs and backend pipeline optimization (~25% faster processing).",
     highlights: [
       "Developed JavaScript-based UI visualizations to simplify exploration of complex datasets.",
       "Optimized backend data pipelines, reducing processing time by ~25% and improving reliability.",
@@ -65,6 +72,8 @@ const experiences = [
     period: "May 2022 – July 2022",
     location: "Hyderabad, India",
     logo: "Microsoft_logo.webp",
+    teaser:
+      "ML recommendation system with similarity-based algorithms and sentiment analysis.",
     highlights: [
       "Built a recommendation system using similarity-based algorithms to deliver personalized results.",
       "Applied sentiment analysis techniques to improve relevance and user experience.",
@@ -132,11 +141,16 @@ export default function Experience() {
                     <h3 className="mt-1 text-base font-semibold text-slate-50 md:text-lg">
                       {exp.role}
                     </h3>
-                    <p className="mt-0.5 truncate text-sm text-slate-400">
+                    <p className="mt-0.5 text-sm text-slate-400">
                       {exp.company}
                       <span className="text-slate-600"> · </span>
                       {exp.location}
                     </p>
+                    {!isOpen && exp.teaser && (
+                      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500 md:text-sm">
+                        {exp.teaser}
+                      </p>
+                    )}
                   </div>
 
                   <FiChevronDown
