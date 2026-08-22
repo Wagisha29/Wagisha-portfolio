@@ -41,7 +41,6 @@ function Navbar() {
           WS
         </button>
 
-        {/* Desktop links */}
         <div className="hidden items-center gap-6 rounded-full border border-slate-800 px-4 py-2 md:flex">
           {sections.map((item) => {
             const Icon = item.icon;
@@ -50,6 +49,7 @@ function Navbar() {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 aria-label={item.label}
+                title={item.label}
                 className={`group relative text-sm font-medium transition-colors ${
                   active === item.id
                     ? "text-cyan-400"
@@ -58,7 +58,10 @@ function Navbar() {
               >
                 <Icon className="text-2xl" aria-hidden="true" />
                 <span className="sr-only">{item.label}</span>
-                <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded-md bg-slate-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <span
+                  role="tooltip"
+                  className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-slate-700 bg-slate-900 px-2.5 py-1 text-xs font-medium text-slate-100 opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+                >
                   {item.label}
                 </span>
               </button>
@@ -66,32 +69,21 @@ function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href="/Wagisha_Singh_Resume.pdf"
-            className="rounded-full bg-cyan-500 px-3 py-2 text-xs font-semibold text-slate-900 shadow-lg shadow-cyan-500/30 transition-colors hover:bg-cyan-400 sm:px-4 sm:text-sm"
-          >
-            <span className="hidden sm:inline">Download Resume</span>
-            <span className="sm:hidden">Resume</span>
-          </a>
-
-          <button
-            type="button"
-            className="rounded-lg p-2 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-expanded={isOpen}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-          >
-            {isOpen ? (
-              <FaTimes className="text-xl" aria-hidden="true" />
-            ) : (
-              <FaBars className="text-xl" aria-hidden="true" />
-            )}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="rounded-lg p-2 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
+          {isOpen ? (
+            <FaTimes className="text-xl" aria-hidden="true" />
+          ) : (
+            <FaBars className="text-xl" aria-hidden="true" />
+          )}
+        </button>
       </nav>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="border-t border-slate-800 bg-slate-950/95 px-4 pb-4 md:hidden">
           <div className="mx-auto max-w-5xl space-y-1 pt-2">
