@@ -198,18 +198,6 @@ export default function Skills() {
             );
           })}
         </div>
-
-        {/* Legend — static, no interaction needed */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-6 rounded-full bg-cyan-400" />
-            Advanced / Proficient
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="h-1.5 w-4 rounded-full bg-slate-600" />
-            Working Knowledge
-          </span>
-        </div>
       </div>
     </section>
   );
