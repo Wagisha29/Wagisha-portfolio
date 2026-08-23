@@ -23,7 +23,7 @@ const projects = [
     tag: "Full Stack · AI",
     liveDemo: "https://spendwise-io.vercel.app/",
     caseStudy: "spendwise",
-    github: "#",
+    github: "https://github.com/Wagisha29/SpendWise",
   },
   {
     id: "photobooth",
