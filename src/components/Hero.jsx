@@ -1,4 +1,5 @@
-import { FiLinkedin, FiMail, FiGithub, FiTwitter } from "react-icons/fi";
+import { FiLinkedin, FiMail, FiGithub } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
 
 const coreStack = [
   "Python",
@@ -126,13 +127,13 @@ function Hero() {
                     <FiGithub className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://leetcode.com/u/user6617cQ/"
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full bg-slate-100 p-2.5 text-slate-600 transition-colors hover:bg-cyan-100 hover:text-cyan-600"
-                    aria-label="Twitter"
+                    aria-label="LeetCode"
                   >
-                    <FiTwitter className="h-5 w-5" />
+                    <SiLeetcode className="h-5 w-5" />
                   </a>
                 </div>
               </div>
