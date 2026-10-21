@@ -3,9 +3,57 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body,
   #root {
     @apply min-h-screen bg-slate-950 text-slate-50;
+  }
+}
+
+@layer utilities {
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .interactive-card:hover {
+    @apply -translate-y-1 border-cyan-500/40 shadow-lg shadow-cyan-500/10;
+  }
+
+  .interactive-pill {
+    @apply transition-all duration-200 ease-out hover:scale-105 hover:border-cyan-400/50 hover:bg-cyan-500/20;
+  }
+
+  .interactive-btn {
+    @apply transition-all duration-200 ease-out hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .text-gradient-animate {
+    @apply bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-300% bg-clip-text text-transparent;
+    animation: gradient-x 6s ease infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

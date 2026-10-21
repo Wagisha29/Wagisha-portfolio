@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import Reveal from "./Reveal";
 
 const experiences = [
   {
@@ -84,124 +85,143 @@ const experiences = [
 
 export default function Experience() {
   const [openIndex, setOpenIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section
-      id="experience"
-      className="bg-slate-950 text-slate-50 border-t border-slate-800"
-    >
+    <section id="experience" className="border-t border-slate-800 bg-slate-950 text-slate-50">
       <div className="mx-auto max-w-6xl px-4 py-20">
-        <h2 className="text-3xl font-semibold tracking-tight mb-3 sm:text-4xl lg:text-6xl">
-          Professional Experience
-        </h2>
-        <p className="text-sm text-slate-400 mb-12 max-w-2xl">
-          Tap a role to expand details — production work across security, AI,
-          and enterprise products.
-        </p>
+        <Reveal>
+          <h2 className="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            Professional Experience
+          </h2>
+        </Reveal>
+        <Reveal delay={80}>
+          <p className="mb-12 max-w-2xl text-sm text-slate-400">
+            Tap a role to expand details — production work across security, AI, and
+            enterprise products.
+          </p>
+        </Reveal>
 
         <div className="space-y-3">
           {experiences.map((exp, index) => {
             const isOpen = openIndex === index;
+            const isHovered = hoveredIndex === index;
             const isCurrent = exp.period.includes("Present");
             const key = `${exp.company}-${exp.role}-${exp.period}`;
 
             return (
-              <article
-                key={key}
-                className={`overflow-hidden rounded-2xl border transition-colors ${
-                  isOpen
-                    ? "border-cyan-500/50 bg-slate-900/80"
-                    : "border-slate-800 bg-slate-900/40 hover:border-slate-700"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  aria-expanded={isOpen}
-                  aria-controls={`panel-${index}`}
-                  className="flex w-full items-center gap-4 p-5 text-left md:gap-5 md:p-6"
-                >
-                  {exp.logo && (
-                    <img
-                      src={exp.logo}
-                      alt=""
-                      className="h-11 w-11 shrink-0 rounded-xl border border-slate-700 bg-slate-800 object-contain p-1.5 md:h-12 md:w-12"
-                    />
-                  )}
-
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      {isCurrent && (
-                        <span className="rounded-full bg-cyan-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-cyan-300">
-                          Current
-                        </span>
-                      )}
-                      <span className="text-xs text-slate-500">{exp.period}</span>
-                    </div>
-                    <h3 className="mt-1 text-base font-semibold text-slate-50 md:text-lg">
-                      {exp.role}
-                    </h3>
-                    <p className="mt-0.5 text-sm text-slate-400">
-                      {exp.company}
-                      <span className="text-slate-600"> · </span>
-                      {exp.location}
-                    </p>
-                    {!isOpen && exp.teaser && (
-                      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500 md:text-sm">
-                        {exp.teaser}
-                      </p>
-                    )}
-                  </div>
-
-                  <FiChevronDown
-                    className={`h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-cyan-400" : ""
-                    }`}
-                  />
-                </button>
-
-                <div
-                  id={`panel-${index}`}
-                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              <Reveal key={key} delay={index * 70}>
+                <article
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className={`interactive-card overflow-hidden rounded-2xl border transition-all duration-300 ${
+                    isOpen
+                      ? "border-cyan-500/50 bg-slate-900/80 shadow-lg shadow-cyan-500/5"
+                      : isHovered
+                        ? "border-slate-600 bg-slate-900/60"
+                        : "border-slate-800 bg-slate-900/40"
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <div className="border-t border-slate-800 px-5 pb-6 pt-4 md:px-6 md:pb-7">
-                      {exp.companyUrl && (
-                        <a
-                          href={exp.companyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mb-4 inline-block text-sm font-medium text-cyan-400 hover:text-cyan-300 hover:underline"
-                        >
-                          Visit {exp.company} →
-                        </a>
-                      )}
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`panel-${index}`}
+                    className="flex w-full items-center gap-4 p-5 text-left md:gap-5 md:p-6"
+                  >
+                    {exp.logo && (
+                      <div
+                        className={`shrink-0 transition-transform duration-300 ${
+                          isHovered || isOpen ? "scale-105" : ""
+                        }`}
+                      >
+                        <img
+                          src={exp.logo}
+                          alt=""
+                          className="h-11 w-11 rounded-xl border border-slate-700 bg-slate-800 object-contain p-1.5 md:h-12 md:w-12"
+                        />
+                      </div>
+                    )}
 
-                      <ul className="space-y-3 text-sm leading-relaxed text-slate-300 md:text-base">
-                        {exp.highlights.map((item) => (
-                          <li key={item} className="flex gap-3">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {exp.tech.split(", ").map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200"
-                          >
-                            {item}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {isCurrent && (
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-cyan-300">
+                            <span className="h-1.5 w-1.5 animate-pulse-soft rounded-full bg-cyan-400" />
+                            Current
                           </span>
-                        ))}
+                        )}
+                        <span className="text-xs text-slate-500">{exp.period}</span>
+                      </div>
+                      <h3 className="mt-1 text-base font-semibold text-slate-50 md:text-lg">
+                        {exp.role}
+                      </h3>
+                      <p className="mt-0.5 text-sm text-slate-400">
+                        {exp.company}
+                        <span className="text-slate-600"> · </span>
+                        {exp.location}
+                      </p>
+                      {!isOpen && exp.teaser && (
+                        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500 md:text-sm">
+                          {exp.teaser}
+                        </p>
+                      )}
+                    </div>
+
+                    <FiChevronDown
+                      className={`h-5 w-5 shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-cyan-400" : "text-slate-500"
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    id={`panel-${index}`}
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="border-t border-slate-800 px-5 pb-6 pt-4 md:px-6 md:pb-7">
+                        {exp.companyUrl && (
+                          <a
+                            href={exp.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="interactive-btn mb-4 inline-block text-sm font-medium text-cyan-400 hover:text-cyan-300 hover:underline"
+                          >
+                            Visit {exp.company} →
+                          </a>
+                        )}
+
+                        <ul className="space-y-3 text-sm leading-relaxed text-slate-300 md:text-base">
+                          {exp.highlights.map((item, i) => (
+                            <li
+                              key={item}
+                              className="flex gap-3 transition-all duration-300 hover:translate-x-1"
+                              style={{ transitionDelay: `${i * 40}ms` }}
+                            >
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {exp.tech.split(", ").map((item) => (
+                            <span
+                              key={item}
+                              className="interactive-pill rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             );
           })}
         </div>
